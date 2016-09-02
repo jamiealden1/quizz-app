@@ -1,0 +1,30 @@
+/*----------------------------
+        Section Styles
+------------------------------*/
+.intro  {
+	display:none;
+}
+
+.quiz {
+	display:block;
+}
+
+.feedback {
+	display:none;
+}
+
+.finalScore {
+	display:none;
+}
+
+
+/*----------------------------
+        Global Styles
+------------------------------*/
+button {
+	display:block;
+}
+
+.currentScore, .questions, .counter {
+	border:1px solid black;
+}
