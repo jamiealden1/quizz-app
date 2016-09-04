@@ -1,6 +1,6 @@
 //Quiz Questions
 
-var question1 {
+var question1 = {
 	question:"When Fry discovers that he's a billionaire, what does he buy?",
 	a:"A Lucy Liu robot",
 	b:"A lifetime supply of Slurm",
@@ -9,7 +9,7 @@ var question1 {
 	correct:"The last tin of sardines on Earth"
 };
 
-var question2 {
+var question2 = {
 	question:"Finish this phrase: 'Morbo is pleased, but ____'",
 	a:"Angry",
 	b:"Sticky",
@@ -18,7 +18,7 @@ var question2 {
 	correct:"Sticky"
 };
 
-var question3 {
+var question3 = {
 	question:"What is the only creature on Earth that Bender is sympathetic to?",
 	a:"Turtles",
 	b:"Goats",
@@ -27,7 +27,7 @@ var question3 {
 	correct:"Turtles"
 };
 
-var question4 {
+var question4 = {
 	question:"What is missing from Zapp Brannigan's uniform?",
 	a:"Boots",
 	b:"Gloves",
@@ -36,25 +36,25 @@ var question4 {
 	correct:"Pants"
 };
 
-var question5 {
+var question5 = {
 	question:"How is Professor Farnsworth related to Fry?",
-	a:"Great (x30) grandfather",
+	a:"Great (x30) grandson",
 	b:"Great (x30) nephew",
 	c:"2nd cousin 20 times removed",
 	d:"He isn't",
 	correct:"Great (x30) nephew"
 };
 
-var question6 {
+var question6 = {
 	question:"Who is Bender's evil twin?",
 	a:"Calculon",
 	b:"Roberto",
 	c:"Flexo",
-	d:"Robot Devil",
+	d:"Coilette",
 	correct:"Flexo"
 };
 
-var question7 {
+var question7 = {
 	question:"What is Zoidberg's first name?",
 	a:"John",
 	b:"Phillip",
@@ -63,7 +63,7 @@ var question7 {
 	correct:"John"
 };
 
-var question8 {
+var question8 = {
 	question:"How does the Femputer sentence Fry, Zapp, and Kif to die?",
 	a:"By firing squad",
 	b:"By snu snu",
@@ -72,7 +72,7 @@ var question8 {
 	correct:"By snu snu"
 };
 
-var question9 {
+var question9 = {
 	question:"What sport does Hermes compete in during the 2980 Olympics?",
 	a:"Octopus Wrestling",
 	b:"Blernsball",
@@ -81,7 +81,7 @@ var question9 {
 	correct:"Limbo"
 };	
 
-var question10 {
+var question10 = {
 	question:"What is Zoidberg a doctor of?",
 	a:"Art History",
 	b:"General Medicine",
@@ -90,8 +90,42 @@ var question10 {
 	correct:"Art History"
 };
 
+var myQuizArray = [question1, question2, question3, question4, question5, question6, question7, question8, question9, question10,];
+
+
+$(document).ready(function(){
+
+	//Initial launch, start game
+	$("#start").click(function(){
+		$("#intro").hide();
+		$("#playArea").show();
+	});
+
+	//Submit answer, get feedback
+	$("#submit").click(function(){
+		event.preventDefault();
+		$("#quiz").hide();
+		$("#feedback").show();
+	});
+
+	//Show next question
+	$("#next").click(function(){
+		$("#feedback").hide();
+		$("#quiz").show();
+	});
+
+	//Show final score
+	$("#final").click(function(){
+		$("#feedback").hide();
+		$("#finalScore").show();
+	});
+
+});
 //Quiz Object
-
+/*
 var quiz {
-
-};
+	var arrayLength = myQuizArray.length;
+	for (var i=0 < arrayLength; i++) {
+		//do something
+	};
+*/

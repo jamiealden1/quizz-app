@@ -29,22 +29,43 @@ img {
 	border-radius:50%;
 }
 
-h2, h3, p{
+h1, h2, h3, p{
 	text-align:center;
 }
 
 /*----------------------------
-        Section Styles
+        Section Layouts
 ------------------------------*/
 
-#intro, #play-area {
+#intro, #playArea, #finalScore {
 	width:600px;
+	min-height:550px;
 	margin:auto;
 	border:1px solid black;
 }
 
-#intro, #final-score, #feedback  {
+#playArea, #finalScore, #feedback  {
 	display:none;
+}
+
+/*----------------------------
+        Intro Styles
+------------------------------*/
+#intro {
+	padding-top:50px;
+}
+
+/*----------------------------
+        playArea Styles
+------------------------------*/
+#playArea {
+	position:relative;
+}
+
+h3.currentScore {
+	position:absolute;
+	bottom:0;
+	width:100%;
 }
 
 .currentScore, .quiz-header {
@@ -53,6 +74,16 @@ h2, h3, p{
 	padding:20px 0 20px 0;
 }
 
+/*----------------------------
+        Quiz Styles
+------------------------------*/
 .questions {
 	padding:10px 0 20px 0;
+}
+
+/*----------------------------
+        Feedback Styles
+------------------------------*/
+#feedback p{
+	padding:10px 0 30px 0;
 }

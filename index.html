@@ -11,44 +11,48 @@
 <main>
 
 <!-- Intro Screen -->
-<section id="intro">
-	<img src="http://placekitten.com/300/300" alt="kitten"/>
-	<button href="#">Start Quiz!</button>
-</section>
-
-<!-- Play Area -->
-<section id="play-area">
-	<div class="quiz-header">Quiz Title Here</div>
-
-	<!-- Quiz -->
-	<section id="quiz">
+	<section id="intro">
+		<h1>Futurama Quiz!</h1>
+		<h2>In Hypno-Vision</h2>
 		<img src="http://placekitten.com/300/300" alt="kitten"/>
-		<h2 class="counter">Question 1 of 10</h2>
-		<div class="questions">
-			<p>Lorem ipsum dolor sit amet?</p>
-			<form action="">
-				<input type="radio" name="question1" value="answer1">Answer 1<br>
-				<input type="radio" name="question1" value="answer2">Answer 2<br>
-				<input type="radio" name="question1" value="answer3">Answer 3<br>
-				<input type="radio" name="question1" value="answer4">Answer 4
-				<button href="#">Submit Answer</button>
-			</form>
-		</div>
-		<h3 class="currentScore">Score: 0 of 10</h3>
+		<button id="start" href="#">Start Quiz!</button>
 	</section>
 
-	<!-- Feedback -->
-	<section id="feedback">
-		<p>Feedback Here</p>
+	<!-- Play Area -->
+	<section id="playArea">
+		<div class="quiz-header">Futurama Quiz</div>
+
+		<!-- Quiz -->
+		<section id="quiz">
+			<img src="http://placekitten.com/200/200" alt="kitten"/>
+			<h2 class="counter">Question 1 of 10</h2>
+			<div class="questions">
+				<p>Lorem ipsum dolor sit amet?</p>
+				<form action="">
+					<input type="radio" id="answerA" name="question1" value="answera">Answer a<br>
+					<input type="radio" id="answerB" name="question1" value="answerb">Answer b<br>
+					<input type="radio" id="answerC" name="question1" value="answerc">Answer c<br>
+					<input type="radio" id="answerD" name="question1" value="answerd">Answer d
+					<button id="submit" href="#">Submit Answer</button>
+				</form>
+			</div>
+		</section>
+
+		<!-- Feedback -->
+		<section id="feedback">
+			<img src="http://placekitten.com/200/200" alt="kitten"/>
+			<h2>Correct! (or not)
+			<p>Lorem ipsum dolor sit amet.</p>
+			<button id="next" href="#">Next Question</button>
+		</section>
+		<h3 class="currentScore">Score: <span id="score">0</span> of 10</h3>
 	</section>
 
 	<!-- Final Score Screen -->
-	<section id="final-score">
+	<section id="finalScore">
 		<h2>Final Score Here</h2>
-		<button href="#">Play Again!</button>
+		<button id="new" href="#">Play Again!</button>
 	</section>
-
-</section>
 
 </main>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
