@@ -1,12 +1,3 @@
-/*futuramaQuiz = {
-	question:"When Fry discovers that he's a billionaire, what does he buy?",
-	a:"A Lucy Liu robot",
-	b:"A lifetime supply of Slurm",
-	c:"The last tin of sardines on Earth",
-	d:"The Planet Express",
-	answer:"The last tin of sardines on Earth"
-	*/
-
 futuramaQuiz = {
 	"questions": [
 		{
@@ -15,7 +6,8 @@ futuramaQuiz = {
 			"b":"A lifetime supply of Slurm",
 			"c":"The last tin of sardines on Earth",
 			"d":"The Planet Express",
-			"answer":"The last tin of sardines on Earth"
+			"answer":"The last tin of sardines on Earth",
+			"explanation":"He buys the last tin of sardines on Earth."
 		},
 
 		{
@@ -24,7 +16,8 @@ futuramaQuiz = {
 			"b":"Sticky",
 			"c":"Smelly",
 			"d":"Confused",
-			"answer":"Sticky"
+			"answer":"Sticky",
+			"explanation":"Sticky, obviously."
 		},
 
 		{
@@ -33,7 +26,8 @@ futuramaQuiz = {
 			"b":"Goats",
 			"c":"Cats",
 			"d":"Butterflies",
-			"answer":"Turtles"
+			"answer":"Turtles",
+			"explanation":"Turtles, stupid."
 		},
 
 		{
@@ -42,7 +36,8 @@ futuramaQuiz = {
 			"b":"Gloves",
 			"c":"Pants",
 			"d":"Belt",
-			"answer":"Pants"
+			"answer":"Pants",
+			"explanation":"Pants. Always pants."
 		},
 
 		{
@@ -51,7 +46,8 @@ futuramaQuiz = {
 			"b":"Great (x30) nephew",
 			"c":"2nd cousin 20 times removed",
 			"d":"He isn't",
-			"answer":"Great (x30) nephew"
+			"answer":"Great (x30) nephew",
+			"explanation":"Fry is also his own grandpa."
 		},
 
 		{
@@ -60,7 +56,8 @@ futuramaQuiz = {
 			"b":"Roberto",
 			"c":"Flexo",
 			"d":"Coilette",
-			"answer":"Flexo"
+			"answer":"Flexo",
+			"explanation":"Flexo, obvi."
 		},
 
 		{
@@ -69,7 +66,8 @@ futuramaQuiz = {
 			"b":"Phillip",
 			"c":"Kevin",
 			"d":"James",
-			"answer":"John"
+			"answer":"John",
+			"explanation":"John"
 		},
 
 		{
@@ -78,7 +76,8 @@ futuramaQuiz = {
 			"b":"By snu snu",
 			"c":"By dinosaur attack",
 			"d":"By suicide booth",
-			"answer":"By snu snu"
+			"answer":"By snu snu",
+			"explanation":"The spirit is willing, but the flesh is spongy and bruised."
 		},
 
 		{
@@ -87,7 +86,8 @@ futuramaQuiz = {
 			"b":"Blernsball",
 			"c":"Swurling",
 			"d":"Limbo",
-			"answer":"Limbo"
+			"answer":"Limbo",
+			"explanation":"He's Jamaican, what did you expect?"
 		},	
 
 		{
@@ -96,10 +96,34 @@ futuramaQuiz = {
 			"b":"General Medicine",
 			"c":"Podiatry",
 			"d":"Physics",
-			"answer":"Art History"
+			"answer":"Art History",
+			"explanation":"Clearly, he knows nothing about medicine."
 		}
 	]
 };
+
+var i=0;
+var count=1;
+
+function next(){
+	i++;
+	if (i<10) {
+		$("#question").text(futuramaQuiz.questions[i].question);
+		$("#explanation").text(futuramaQuiz.questions[i].explanation);
+
+	}
+	else {
+		$("#playArea").hide();
+		$("#finalScore").show();
+	}
+};
+
+function quizCounter() {
+	count++;
+	$("#count").text(count);
+}
+
+
 
 $(document).ready(function(){
 
@@ -108,6 +132,7 @@ $(document).ready(function(){
 		$("#intro").hide();
 		$("#playArea").show();
 		$("#question").text(futuramaQuiz.questions[0].question);
+		$("#explanation").text(futuramaQuiz.questions[0].explanation);
 	});
 
 	//Submit answer, get feedback
@@ -115,18 +140,15 @@ $(document).ready(function(){
 		event.preventDefault();
 		$("#quiz").hide();
 		$("#feedback").show();
-	
+
 	});
 
 	//Show next question
 	$("#next").click(function(){
 		$("#feedback").hide();
 		$("#quiz").show();
-		for (i=1; i<(futuramaQuiz.questions.length); i.next) {
-			console.log(futuramaQuiz.questions[i].question);
-			//$("#question").text(futuramaQuiz.questions[i].question);
-		};
-
+		next();
+		quizCounter();
 	});
 
 	//Show final score
