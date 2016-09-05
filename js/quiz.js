@@ -1,3 +1,5 @@
+var score = 0;
+
 futuramaQuiz = {
 	"questions": [
 		{
@@ -7,7 +9,6 @@ futuramaQuiz = {
 			"c":"The last tin of sardines on Earth",
 			"d":"The Planet Express",
 			"answer":"The last tin of sardines on Earth",
-			"explanation":"He buys the last tin of sardines on Earth."
 		},
 
 		{
@@ -17,7 +18,6 @@ futuramaQuiz = {
 			"c":"Smelly",
 			"d":"Confused",
 			"answer":"Sticky",
-			"explanation":"Sticky, obviously."
 		},
 
 		{
@@ -27,7 +27,6 @@ futuramaQuiz = {
 			"c":"Cats",
 			"d":"Butterflies",
 			"answer":"Turtles",
-			"explanation":"Turtles, stupid."
 		},
 
 		{
@@ -37,7 +36,6 @@ futuramaQuiz = {
 			"c":"Pants",
 			"d":"Belt",
 			"answer":"Pants",
-			"explanation":"Pants. Always pants."
 		},
 
 		{
@@ -47,7 +45,6 @@ futuramaQuiz = {
 			"c":"2nd cousin 20 times removed",
 			"d":"He isn't",
 			"answer":"Great (x30) nephew",
-			"explanation":"Fry is also his own grandpa."
 		},
 
 		{
@@ -57,7 +54,6 @@ futuramaQuiz = {
 			"c":"Flexo",
 			"d":"Coilette",
 			"answer":"Flexo",
-			"explanation":"Flexo, obvi."
 		},
 
 		{
@@ -67,7 +63,6 @@ futuramaQuiz = {
 			"c":"Kevin",
 			"d":"James",
 			"answer":"John",
-			"explanation":"John"
 		},
 
 		{
@@ -77,7 +72,6 @@ futuramaQuiz = {
 			"c":"By dinosaur attack",
 			"d":"By suicide booth",
 			"answer":"By snu snu",
-			"explanation":"The spirit is willing, but the flesh is spongy and bruised."
 		},
 
 		{
@@ -87,7 +81,6 @@ futuramaQuiz = {
 			"c":"Swurling",
 			"d":"Limbo",
 			"answer":"Limbo",
-			"explanation":"He's Jamaican, what did you expect?"
 		},	
 
 		{
@@ -97,26 +90,47 @@ futuramaQuiz = {
 			"c":"Podiatry",
 			"d":"Physics",
 			"answer":"Art History",
-			"explanation":"Clearly, he knows nothing about medicine."
 		}
-	]
+	],
+	/*
+	resultScore:function() {
+		if (futuramaQuiz.questions.answer === radio selected) {
+			$("#result").text("Correct!");
+			score++;
+			$("#score").text(score);
+		}
+		else {
+			$("#result").text("Wrong!");
+		}
+	}
+	*/
 };
 
 var i=0;
 var count=1;
+	
+
 
 function start(){
-		$("#playArea").show();
-		$("#question").text(futuramaQuiz.questions[0].question);
-		$("#explanation").text(futuramaQuiz.questions[0].explanation);
-		$("#count").text(1);
+	$("#playArea").show();
+	$("#question").text(futuramaQuiz.questions[0].question);
+	$("#answer").text(futuramaQuiz.questions[0].answer);
+	$("#answerA").text(futuramaQuiz.questions[0].a);
+	$("#answerB").text(futuramaQuiz.questions[0].b);
+	$("#answerC").text(futuramaQuiz.questions[0].c);
+	$("#answerD").text(futuramaQuiz.questions[0].d);
+	$("#count").text(1);
 }
 
 function next(){
 	i++;
 	if (i<10) {
 		$("#question").text(futuramaQuiz.questions[i].question);
-		$("#explanation").text(futuramaQuiz.questions[i].explanation);
+		$("#answer").text(futuramaQuiz.questions[i].answer);
+		$("#answerA").text(futuramaQuiz.questions[i].a);
+		$("#answerB").text(futuramaQuiz.questions[i].b);
+		$("#answerC").text(futuramaQuiz.questions[i].c);
+		$("#answerD").text(futuramaQuiz.questions[i].d);
 	}
 	else {
 		$("#playArea").hide();
@@ -163,7 +177,7 @@ $(document).ready(function(){
 
 	//Start new game
 	$("#new").click(function(){
-		start();
+		//
 	});
 
 

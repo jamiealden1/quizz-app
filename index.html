@@ -29,10 +29,10 @@
 			<div class="indQuestions">
 				<p id="question">Lorem ipsum dolor sit amet?</p>
 				<form action="">
-					<input type="radio" id="answerA" name="question1" value="answera">Answer a<br>
-					<input type="radio" id="answerB" name="question1" value="answerb">Answer b<br>
-					<input type="radio" id="answerC" name="question1" value="answerc">Answer c<br>
-					<input type="radio" id="answerD" name="question1" value="answerd">Answer d
+					<input type="radio" name="option"><label id="answerA">Answer a</label><br>
+					<input type="radio" name="option"><label id="answerB">Answer b</label><br>
+					<input type="radio" name="option"><label id="answerC">Answer c</label><br>
+					<input type="radio" name="option"><label id="answerD">Answer d</label>
 					<button id="submit" href="#">Submit Answer</button>
 				</form>
 			</div>
@@ -41,8 +41,8 @@
 		<!-- Feedback -->
 		<section id="feedback">
 			<img src="http://placekitten.com/200/200" alt="kitten"/>
-			<h2>Correct! (or not)
-			<p id="explanation">Lorem ipsum dolor sit amet.</p>
+			<h2 id="result">Correct! (or not)</h2>
+			<p id="answer">Lorem ipsum dolor sit amet.</p>
 			<button id="next" href="#">Next Question</button>
 		</section>
 		<h3 class="currentScore">Score: <span id="score">0</span> of 10</h3>
