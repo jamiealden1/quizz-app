@@ -105,12 +105,18 @@ futuramaQuiz = {
 var i=0;
 var count=1;
 
+function start(){
+		$("#playArea").show();
+		$("#question").text(futuramaQuiz.questions[0].question);
+		$("#explanation").text(futuramaQuiz.questions[0].explanation);
+		$("#count").text(1);
+}
+
 function next(){
 	i++;
 	if (i<10) {
 		$("#question").text(futuramaQuiz.questions[i].question);
 		$("#explanation").text(futuramaQuiz.questions[i].explanation);
-
 	}
 	else {
 		$("#playArea").hide();
@@ -130,9 +136,7 @@ $(document).ready(function(){
 	//Initial launch, start game
 	$("#start").click(function(){
 		$("#intro").hide();
-		$("#playArea").show();
-		$("#question").text(futuramaQuiz.questions[0].question);
-		$("#explanation").text(futuramaQuiz.questions[0].explanation);
+		start();
 	});
 
 	//Submit answer, get feedback
@@ -155,6 +159,11 @@ $(document).ready(function(){
 	$("#final").click(function(){
 		$("#feedback").hide();
 		$("#finalScore").show();
+	});
+
+	//Start new game
+	$("#new").click(function(){
+		start();
 	});
 
 
