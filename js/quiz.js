@@ -91,26 +91,18 @@ futuramaQuiz = {
 			"d":"Physics",
 			"answer":"Art History",
 		}
-	],
-	/*
-	resultScore:function() {
-		if (futuramaQuiz.questions.answer === radio selected) {
-			$("#result").text("Correct!");
-			score++;
-			$("#score").text(score);
-		}
-		else {
-			$("#result").text("Wrong!");
-		}
-	}
-	*/
+	]
 };
 
 var i=0;
 var count=1;
+
+function checkAnswer(){
+var radioButtons = $("#futurama input:radio[name='option']");
+var selectedIndex = radioButtons.index(radioButtons.filter(':checked'));
+console.log (selectedIndex);
+}
 	
-
-
 function start(){
 	$("#playArea").show();
 	$("#question").text(futuramaQuiz.questions[0].question);
@@ -157,6 +149,7 @@ $(document).ready(function(){
 	$("#submit").click(function(){
 		event.preventDefault();
 		$("#quiz").hide();
+		checkAnswer();
 		$("#feedback").show();
 
 	});
