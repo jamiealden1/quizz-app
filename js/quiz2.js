@@ -99,6 +99,11 @@ var quiz = {
 			("#result").text("Wrong")
 		}
 	},
+
+	nextQuestion: function() {
+		this.currentQuestionIndex++;
+		this.currentQuestion();
+	},
 }
 
 
