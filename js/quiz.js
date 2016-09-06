@@ -1,4 +1,6 @@
 var score = 0;
+var i=0;
+var count=1;
 
 futuramaQuiz = {
 	"questions": [
@@ -9,6 +11,7 @@ futuramaQuiz = {
 			"c":"The last tin of sardines on Earth",
 			"d":"The Planet Express",
 			"answer":"The last tin of sardines on Earth",
+			"correct":"c"
 		},
 
 		{
@@ -18,6 +21,7 @@ futuramaQuiz = {
 			"c":"Smelly",
 			"d":"Confused",
 			"answer":"Sticky",
+			"correct":"b"
 		},
 
 		{
@@ -27,6 +31,7 @@ futuramaQuiz = {
 			"c":"Cats",
 			"d":"Butterflies",
 			"answer":"Turtles",
+			"correct":"a"
 		},
 
 		{
@@ -36,6 +41,7 @@ futuramaQuiz = {
 			"c":"Pants",
 			"d":"Belt",
 			"answer":"Pants",
+			"correct":"c"
 		},
 
 		{
@@ -45,6 +51,7 @@ futuramaQuiz = {
 			"c":"2nd cousin 20 times removed",
 			"d":"He isn't",
 			"answer":"Great (x30) nephew",
+			"correct":"b"
 		},
 
 		{
@@ -54,6 +61,7 @@ futuramaQuiz = {
 			"c":"Flexo",
 			"d":"Coilette",
 			"answer":"Flexo",
+			"correct":"c"
 		},
 
 		{
@@ -63,6 +71,7 @@ futuramaQuiz = {
 			"c":"Kevin",
 			"d":"James",
 			"answer":"John",
+			"correct":"a"
 		},
 
 		{
@@ -72,6 +81,7 @@ futuramaQuiz = {
 			"c":"By dinosaur attack",
 			"d":"By suicide booth",
 			"answer":"By snu snu",
+			"correct":"b"
 		},
 
 		{
@@ -81,6 +91,7 @@ futuramaQuiz = {
 			"c":"Swurling",
 			"d":"Limbo",
 			"answer":"Limbo",
+			"correct":"d"
 		},	
 
 		{
@@ -90,18 +101,22 @@ futuramaQuiz = {
 			"c":"Podiatry",
 			"d":"Physics",
 			"answer":"Art History",
+			"correct":"a"
 		}
-	]
+	]	
+};
+function checkAnswer(){
+var currentAnswer=futuramaQuiz.questions[i].correct;
+	if ($('input[name="option"]:checked').val() == currentAnswer){
+		$("#result").text("Correct!");
+		score++;
+		$("#score").text(score);
+	}
+	else {
+		$("#result").text("Wrong");
+	};
 };
 
-var i=0;
-var count=1;
-
-function checkAnswer(){
-var radioButtons = $("#futurama input:radio[name='option']");
-var selectedIndex = radioButtons.index(radioButtons.filter(':checked'));
-console.log (selectedIndex);
-}
 	
 function start(){
 	$("#playArea").show();
@@ -123,6 +138,7 @@ function next(){
 		$("#answerB").text(futuramaQuiz.questions[i].b);
 		$("#answerC").text(futuramaQuiz.questions[i].c);
 		$("#answerD").text(futuramaQuiz.questions[i].d);
+				
 	}
 	else {
 		$("#playArea").hide();
@@ -149,8 +165,8 @@ $(document).ready(function(){
 	$("#submit").click(function(){
 		event.preventDefault();
 		$("#quiz").hide();
-		checkAnswer();
 		$("#feedback").show();
+		checkAnswer();
 
 	});
 
