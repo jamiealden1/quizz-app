@@ -124,20 +124,15 @@ function finalScore(){
 	$("#final").text(score);
 }
 
-
-/*function validateRadios(){
-	if ($('input[id="a"]:checked' ==false) && $('input[id="b"]:checked' ==false) && $('input[id="c"]:checked' ==false) && $('input[id="d"]:checked' ==false)) {
-			alert("Please select an answer");
-		}
-	else {
-		$("#quiz").hide();
-		$("#feedback").show();
-		checkAnswer();
-	};
+function reset(){
+	i=0;
+	score=0;
+	count=1;
+	$("input:checked").removeAttr("checked");
 }
-*/
-	
+
 function start(){
+	reset();
 	$("#playArea").show();
 	$("#question").text(futuramaQuiz.questions[0].question);
 	$("#answer").text(futuramaQuiz.questions[0].answer);
@@ -146,6 +141,7 @@ function start(){
 	$("#answerC").text(futuramaQuiz.questions[0].c);
 	$("#answerD").text(futuramaQuiz.questions[0].d);
 	$("#count").text(1);
+	$("#score").text(0);
 }
 
 function next(){
@@ -170,7 +166,6 @@ function quizCounter() {
 	count++;
 	$("#count").text(count);
 }
-
 
 
 $(document).ready(function(){
@@ -199,7 +194,8 @@ $(document).ready(function(){
 
 	//Start new game
 	$("#new").click(function(){
-		//
+		$("#finalScore").hide();
+		start();
 	});
 
 });
