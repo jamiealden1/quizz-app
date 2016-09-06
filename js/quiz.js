@@ -105,6 +105,9 @@ futuramaQuiz = {
 		}
 	]	
 };
+
+
+
 function checkAnswer(){
 var currentAnswer=futuramaQuiz.questions[i].correct;
 	if ($('input[name="option"]:checked').val() == currentAnswer){
@@ -117,6 +120,22 @@ var currentAnswer=futuramaQuiz.questions[i].correct;
 	};
 };
 
+function finalScore(){
+	$("#final").text(score);
+}
+
+
+/*function validateRadios(){
+	if ($('input[id="a"]:checked' ==false) && $('input[id="b"]:checked' ==false) && $('input[id="c"]:checked' ==false) && $('input[id="d"]:checked' ==false)) {
+			alert("Please select an answer");
+		}
+	else {
+		$("#quiz").hide();
+		$("#feedback").show();
+		checkAnswer();
+	};
+}
+*/
 	
 function start(){
 	$("#playArea").show();
@@ -138,11 +157,12 @@ function next(){
 		$("#answerB").text(futuramaQuiz.questions[i].b);
 		$("#answerC").text(futuramaQuiz.questions[i].c);
 		$("#answerD").text(futuramaQuiz.questions[i].d);
-				
+		$("input:checked").removeAttr("checked");		
 	}
 	else {
 		$("#playArea").hide();
 		$("#finalScore").show();
+		finalScore();
 	}
 };
 
@@ -167,7 +187,6 @@ $(document).ready(function(){
 		$("#quiz").hide();
 		$("#feedback").show();
 		checkAnswer();
-
 	});
 
 	//Show next question
@@ -178,20 +197,11 @@ $(document).ready(function(){
 		quizCounter();
 	});
 
-	//Show final score
-	$("#final").click(function(){
-		$("#feedback").hide();
-		$("#finalScore").show();
-	});
-
 	//Start new game
 	$("#new").click(function(){
 		//
 	});
 
-
-
 });
-//Quiz Object
 
 
